@@ -8,14 +8,13 @@ import {
   ArrowUpRight,
   MapPin,
   Phone,
-  Navigation,
-  Clock,
+  Utensils,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Locations | Chocolate City Kenya",
   description:
-    "Find Chocolate City Kenya locations in Kileleshwa and Machakos, explore directions, and contact our team about your visit.",
+    "Find Chocolate City dine-in restaurants in Kileleshwa, Machakos and Karen, explore directions and plan your visit.",
 };
 
 const branches = [
@@ -24,9 +23,9 @@ const branches = [
     area: "Nairobi, Kenya",
     phone: "+254 703 827 955",
     tel: "+254703827955",
-    parking: "Free parking",
+    service: "Dine-in restaurant · Meeting rooms available",
     description:
-      "Join us for food, drinks and good company at our Kileleshwa restaurant and bar.",
+      "Enjoy dine-in food, drinks and good company. Meeting rooms are also available to book for private meetings at this location.",
     map: "https://maps.app.goo.gl/m8SWXGUffdbdcJ7W8",
     image: "/images/restaurant/restaurant-photo-04.jpg",
     number: "01",
@@ -34,14 +33,26 @@ const branches = [
   {
     name: "Machakos",
     area: "Machakos, Kenya",
-    phone: "+254 703 827 205",
-    tel: "+254703827205",
-    parking: "Spacious parking",
+    phone: "+254 703 827 955",
+    tel: "+254703827955",
+    service: "Dine-in restaurant · Conferencing",
     description:
-      "Enjoy a welcoming restaurant and bar experience in Machakos, ideal for meals and gatherings.",
+      "Enjoy a welcoming dine-in restaurant experience in Machakos, with food, drinks and space for gatherings.",
     map: "https://maps.app.goo.gl/98EL4mgC9MeCN3cJ6",
     image: "/images/restaurant/restaurant-photo-09.jpg",
     number: "02",
+  },
+  {
+    name: "Karen",
+    area: "Karen, Nairobi, Kenya",
+    phone: "+254 703 827 955",
+    tel: "+254703827955",
+    service: "Dine-in restaurant · Conferencing",
+    description:
+      "Visit our Karen branch for dine-in food, drinks and good company.",
+    map: "https://www.google.com/maps/dir/?api=1&destination=Chocolate+City+Langata",
+    image: "/images/restaurant/restaurant-photo-12.jpg",
+    number: "03",
   },
 ];
 
@@ -77,8 +88,7 @@ export default function LocationsPage() {
 
             <div className="mt-8 flex max-w-2xl flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
               <p className="max-w-lg text-sm leading-7 text-white/75 sm:text-base">
-                Find your nearest Chocolate City, explore directions and plan
-                your next meal, celebration or gathering with us.
+                Explore our three operating locations, get directions and plan your next dine-in visit or gathering with us.
               </p>
 
               <Link
@@ -92,7 +102,7 @@ export default function LocationsPage() {
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/20 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">
               <span>Kileleshwa</span>
               <span>Machakos</span>
-              <span>Karen · Coming soon</span>
+              <span>Karen</span>
             </div>
           </div>
         </section>
@@ -165,8 +175,8 @@ export default function LocationsPage() {
                     </div>
 
                     <div className="flex items-center gap-3 text-sm text-[#51443c]">
-                      <Navigation size={17} className="text-[#b95b32]" />
-                      {branch.parking}
+                      <Utensils size={17} className="text-[#b95b32]" />
+                      {branch.service}
                     </div>
                   </div>
 
@@ -198,40 +208,43 @@ export default function LocationsPage() {
           </p>
         </section>
 
-        {/* Coming soon */}
+        {/* Kileleshwa meeting rooms */}
         <section className="border-y border-[#291d18]/10 bg-[#eee5da] px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1fr_0.7fr] md:items-center">
             <div>
               <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#b95b32]">
-                Coming soon
+                Kileleshwa
               </p>
-
-              <h2 className="font-serif text-6xl font-normal leading-[1.02] tracking-[-0.04em] sm:text-7xl">
-                Chocolate City
+              <h2 className="font-serif text-5xl font-normal leading-[1.02] tracking-[-0.04em] sm:text-6xl">
+                A space to
                 <br />
-                <em>Karen.</em>
+                <em>meet and connect.</em>
               </h2>
-
               <p className="mt-6 max-w-lg text-sm leading-7 text-[#796b61]">
-                Karen is listed as a forthcoming location. Contact our team
-                for the latest update on its opening.
+                Kileleshwa offers rooms that can be booked for private meetings.
+                Contact our team to discuss your requirements and availability.
               </p>
-
               <a
-                href="tel:+254799816578"
+                href="tel:+254703827955"
                 className="mt-8 inline-flex items-center gap-3 border-b border-[#b95b32]/50 pb-2 text-xs font-bold uppercase tracking-[0.15em] text-[#291d18] transition hover:text-[#b95b32]"
               >
-                <Phone size={15} /> +254 799 816 578
+                <Phone size={15} /> +254 703 827 955
               </a>
             </div>
-
             <div className="border border-[#291d18]/10 bg-[#fbf8f3] p-8 sm:p-10">
-              <Clock size={27} strokeWidth={1.4} className="text-[#b95b32]" />
-              <h3 className="mt-6 font-serif text-3xl">A new place to gather.</h3>
+              <Utensils size={27} strokeWidth={1.4} className="text-[#b95b32]" />
+              <h3 className="mt-6 font-serif text-3xl">Dine in. Meet. Connect.</h3>
               <p className="mt-4 text-sm leading-7 text-[#796b61]">
-                The opening date and operating hours have not yet been
-                confirmed. Please contact the Chocolate City team for updates.
+                Chocolate City is a dine-in restaurant with conferencing
+                facilities. Meeting-room bookings for private meetings are
+                available at Kileleshwa.
               </p>
+              <Link
+                href="/contact"
+                className="mt-7 inline-flex items-center gap-2 border-b border-[#b95b32]/50 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#291d18] hover:text-[#b95b32]"
+              >
+                Enquire with our team <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </section>

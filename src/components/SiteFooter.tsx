@@ -8,16 +8,8 @@ import {
 
 const officialEmail = "info@chocolatecity.co.ke";
 
-const officialPhones = [
-  {
-    number: "+254799816578",
-    display: "+254 799 816 578",
-  },
-  {
-    number: "+254703827955",
-    display: "+254 703 827 955",
-  },
-];
+const officialPhone = "+254703827955";
+
 
 export default function SiteFooter() {
   return (
@@ -60,12 +52,10 @@ export default function SiteFooter() {
             {officialEmail}
           </a>
 
-          {officialPhones.map((phone) => (
-            <a key={phone.number} href={`tel:${phone.number}`}>
-              <Phone size={15} />
-              {phone.display}
-            </a>
-          ))}
+          <a href={`tel:${officialPhone}`}>
+            <Phone size={15} />
+            +254 703 827 955
+          </a>
 
           <Link href="/contact">
             Contact our team <ArrowUpRight size={14} />
@@ -82,7 +72,7 @@ export default function SiteFooter() {
           <p>Our official social media links will be added here soon.</p>
 
           <a
-            href="https://maps.google.com/"
+            href="/locations"
             target="_blank"
             rel="noreferrer"
           >

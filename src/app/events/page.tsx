@@ -14,7 +14,7 @@ const experiences = [
     title: "Private Celebrations",
     category: "SPECIAL OCCASIONS",
     description:
-      "Bring friends and family together for birthdays, milestones and memorable gatherings.",
+      "Bring friends and family together for birthdays, milestones and memorable restaurant gatherings.",
     image: "/images/restaurant/restaurant-photo-04.jpg",
     icon: PartyPopper,
     number: "01",
@@ -23,7 +23,7 @@ const experiences = [
     title: "Corporate Gatherings",
     category: "BUSINESS & NETWORKING",
     description:
-      "Create space for team dinners, client meetings and professional get-togethers.",
+      "Bring colleagues and clients together for business gatherings and conferencing at Chocolate City.",
     image: "/images/restaurant/restaurant-photo-09.jpg",
     icon: BriefcaseBusiness,
     number: "02",
@@ -36,6 +36,15 @@ const experiences = [
     image: "/images/restaurant/restaurant-photo-16.jpg",
     icon: Users,
     number: "03",
+  },
+  {
+    title: "Kileleshwa Meeting Rooms",
+    category: "PRIVATE MEETINGS",
+    description:
+      "Rooms at our Kileleshwa location can be booked for private meetings. Contact the team to discuss availability and arrangements.",
+    image: "/images/restaurant/restaurant-photo-16.jpg",
+    icon: BriefcaseBusiness,
+    number: "04",
   },
 ];
 
@@ -106,13 +115,11 @@ export default function EventsPage() {
             </div>
 
             <p className="max-w-md text-sm leading-7 text-[#796b61] md:justify-self-end">
-              Whether you are bringing people together for a special
-              celebration, a business gathering or simply a shared meal,
-              let's make it a moment worth remembering.
+              Chocolate City is a dine-in restaurant with conferencing facilities. Kileleshwa also has rooms available to book for private meetings.
             </p>
           </div>
 
-          <div className="grid gap-7 md:grid-cols-3">
+          <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-4">
             {experiences.map((experience) => {
               const Icon = experience.icon;
 

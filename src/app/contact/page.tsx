@@ -104,7 +104,7 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="tel:+254799816578"
+                href="tel:+254703827955"
                 className="group flex items-start gap-4"
               >
                 <span className="flex size-12 shrink-0 items-center justify-center bg-[#eee5da] text-[#b95b32] transition group-hover:bg-[#291d18] group-hover:text-white">
@@ -115,9 +115,6 @@ export default function ContactPage() {
                     Call our team
                   </span>
                   <span className="mt-2 block text-sm font-medium text-[#291d18] transition group-hover:text-[#b95b32]">
-                    +254 799 816 578
-                  </span>
-                  <span className="mt-1 block text-sm text-[#796b61]">
                     +254 703 827 955
                   </span>
                 </span>
@@ -135,7 +132,7 @@ export default function ContactPage() {
                     Kileleshwa · Nairobi
                   </span>
                   <span className="mt-1 block text-sm text-[#796b61]">
-                    Machakos, Kenya
+                    Machakos · Karen, Kenya
                   </span>
                   <a
                     href="/locations"

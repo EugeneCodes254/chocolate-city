@@ -98,6 +98,10 @@ export default function ReservationsPage() {
                   <MapPin size={14} className="text-[#e9a17b]" />
                   Machakos
                 </span>
+                <span className="inline-flex items-center gap-2">
+                  <MapPin size={14} className="text-[#e9a17b]" />
+                  Karen
+                </span>
               </div>
             </div>
 
@@ -339,6 +343,7 @@ export default function ReservationsPage() {
                         </option>
                         <option value="Kileleshwa">Kileleshwa</option>
                         <option value="Machakos">Machakos</option>
+                        <option value="Karen">Karen</option>
                         <option value="Other">Other / please advise</option>
                       </select>
                     </label>
