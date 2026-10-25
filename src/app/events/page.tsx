@@ -193,7 +193,7 @@ export default function EventsPage() {
 
           <div className="relative mx-auto max-w-7xl">
             <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.28em] text-[#e9a17b]">
-              Let's start planning
+              Let&apos;s start planning
             </p>
 
             <div className="flex flex-col gap-9 md:flex-row md:items-end md:justify-between">

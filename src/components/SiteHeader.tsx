@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, CalendarDays, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, CalendarDays } from "lucide-react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -29,10 +30,13 @@ export default function SiteHeader() {
         onClick={closeMenu}
       >
         <span className="brand-logo-wrap brand-logo-transparent">
-          <img
+          <Image
             src="/chocolate-city-logo-transparent.png"
             alt="Chocolate City official logo"
             className="brand-logo-image"
+            width={890}
+            height={222}
+            priority
           />
         </span>
       </Link>

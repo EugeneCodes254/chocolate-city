@@ -135,7 +135,7 @@ export default function ReservationsPage() {
             </p>
 
             <h2 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] sm:text-6xl">
-              Let's make
+              Let&apos;s make
               <br />
               <em>it a moment.</em>
             </h2>

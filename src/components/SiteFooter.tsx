@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Mail,
@@ -17,13 +18,12 @@ export default function SiteFooter() {
       <div className="footer-main">
         <div className="footer-brand-column">
           <Link href="/" className="footer-brand">
-            <img
+            <Image
               src="/chocolate-city-logo-transparent.png"
               alt="Chocolate City"
               className="footer-official-logo"
-              width="190"
-              height="48"
-              loading="lazy"
+              width={890}
+              height={222}
             />
           </Link>
 

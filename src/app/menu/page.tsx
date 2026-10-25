@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 
 type Dish = {
@@ -342,9 +343,12 @@ export default function MenuPage() {
 
       {/* Editorial hero */}
       <section className="relative isolate flex min-h-[570px] items-end overflow-hidden bg-[#211712] px-5 pb-16 pt-24 sm:min-h-[650px] sm:px-10 sm:pb-20">
-        <img
+        <Image
           src="/images/restaurant/restaurant-photo-02.jpg"
           alt="Chocolate City dining experience"
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1d1511]/90 via-[#1d1511]/60 to-[#1d1511]/20" />
@@ -364,7 +368,7 @@ export default function MenuPage() {
           <div className="mt-8 flex max-w-2xl flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-lg text-sm leading-7 text-white/75 sm:text-base">
               From slow mornings and familiar favourites to memorable meals
-              shared around the table. Find something you'll love.
+              shared around the table. Find something you&apos;ll love.
             </p>
 
             <a
@@ -544,10 +548,12 @@ export default function MenuPage() {
 
       {/* Reservation invitation */}
       <section className="relative isolate overflow-hidden bg-[#291d18] px-5 py-20 text-[#fffaf4] sm:px-8 sm:py-24">
-        <img
+        <Image
           src="/images/restaurant/restaurant-photo-18.jpg"
           alt=""
           aria-hidden="true"
+          fill
+          sizes="100vw"
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25"
         />
         <div className="absolute inset-0 -z-10 bg-[#291d18]/75" />

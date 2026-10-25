@@ -276,7 +276,7 @@ export default function LocationsPage() {
 
                 <p className="mt-6 max-w-lg text-sm leading-7 text-white/65">
                   Planning a visit, celebration or group gathering? Get in
-                  touch with our team and let's plan your experience.
+                  touch with our team and let&apos;s plan your experience.
                 </p>
               </div>
 

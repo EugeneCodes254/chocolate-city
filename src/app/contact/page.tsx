@@ -74,7 +74,7 @@ export default function ContactPage() {
             </p>
 
             <h2 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] sm:text-6xl">
-              Let's talk
+              Let&apos;s talk
               <br />
               <em>about it.</em>
             </h2>
@@ -310,7 +310,7 @@ export default function ContactPage() {
                 Your next moment starts here
               </p>
               <h2 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] sm:text-7xl">
-                We can't wait
+                We can&apos;t wait
                 <br />
                 <em className="text-[#e9a17b]">to welcome you.</em>
               </h2>

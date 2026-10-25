@@ -294,16 +294,16 @@ export default function Home() {
 
         <div className="editorial-gallery">
           <figure className="editorial-gallery-main">
-            <img src="/images/restaurant/restaurant-photo-02.jpg" alt="Chocolate City restaurant interior" loading="lazy" />
+            <Image src="/images/restaurant/restaurant-photo-02.jpg" alt="Chocolate City restaurant interior" fill sizes="(max-width: 900px) 100vw, 62vw" />
             <figcaption><span>01 / THE SPACE</span><strong>A place to settle in.</strong></figcaption>
           </figure>
           <div className="editorial-gallery-side">
             <figure>
-              <img src="/images/restaurant/restaurant-photo-05.jpg" alt="Chocolate City dining and bar area" loading="lazy" />
+              <Image src="/images/restaurant/restaurant-photo-05.jpg" alt="Chocolate City dining and bar area" fill sizes="(max-width: 900px) 100vw, 38vw" />
               <figcaption><span>02 / GOOD COMPANY</span><strong>Made for gathering.</strong></figcaption>
             </figure>
             <figure>
-              <img src="/images/restaurant/restaurant-photo-18.jpg" alt="Chocolate City venue details" loading="lazy" />
+              <Image src="/images/restaurant/restaurant-photo-18.jpg" alt="Chocolate City venue details" fill sizes="(max-width: 900px) 100vw, 38vw" />
               <figcaption><span>03 / THE DETAILS</span><strong>Stay a little longer.</strong></figcaption>
             </figure>
           </div>
@@ -358,12 +358,12 @@ export default function Home() {
 
       <footer className="site-footer">
         <a href="#home" className="footer-brand homepage-footer-brand">
-          <img
+          <Image
             src="/chocolate-city-logo-transparent.png"
             alt="Chocolate City"
             className="homepage-footer-logo"
-            width="220"
-            height="55"
+            width={220}
+            height={55}
           />
         </a>
         <p className="footer-message">
