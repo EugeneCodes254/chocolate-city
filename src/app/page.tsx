@@ -350,9 +350,7 @@ export default function Home() {
         </p>
         <a
           className="button button-light"
-          href="https://chocolatecity.co.ke/"
-          target="_blank"
-          rel="noreferrer"
+          href="/contact"
         >
           Contact Chocolate City <ArrowUpRight size={17} />
         </a>

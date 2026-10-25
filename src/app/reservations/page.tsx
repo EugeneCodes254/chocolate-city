@@ -17,6 +17,7 @@ export default function ReservationsPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [enquiryId, setEnquiryId] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -34,8 +35,11 @@ export default function ReservationsPage() {
         body: JSON.stringify(payload),
       });
 
-      const result: { error?: string; message?: string } =
-        await response.json();
+      const result: {
+        error?: string;
+        message?: string;
+        enquiry?: { id?: string; status?: string };
+      } = await response.json();
 
       if (!response.ok) {
         setErrorMessage(
@@ -44,6 +48,7 @@ export default function ReservationsPage() {
         return;
       }
 
+      setEnquiryId(result.enquiry?.id ?? "");
       setSubmitted(true);
     } catch {
       setErrorMessage(
@@ -210,6 +215,11 @@ export default function ReservationsPage() {
                   Your enquiry has been saved. Our team will need to confirm
                   availability before your reservation is confirmed.
                 </p>
+                {enquiryId && (
+                  <p className="mt-5 border border-[#291d18]/10 bg-white px-5 py-4 text-xs text-[#796b61]">
+                    Enquiry ID: <strong className="text-[#291d18]">{enquiryId}</strong>
+                  </p>
+                )}
                 <button
                   className="mt-9 inline-flex w-fit items-center gap-3 bg-[#291d18] px-7 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#b95b32]"
                   type="button"

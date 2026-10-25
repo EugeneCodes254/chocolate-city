@@ -6,6 +6,7 @@ export const runtime = "nodejs";
 const allowedLocations = new Set([
   "Kileleshwa",
   "Machakos",
+  "Karen",
   "Other",
 ]);
 
