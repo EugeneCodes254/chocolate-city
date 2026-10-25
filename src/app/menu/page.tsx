@@ -311,6 +311,7 @@ const dishes: Dish[] = [
   { name: "Margherita Medium", category: "Pizza", price: 800 },
 ];
 
+
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("Breakfast");
   const [search, setSearch] = useState("");
@@ -321,6 +322,7 @@ export default function MenuPage() {
     return dishes.filter((dish) => {
       const matchesCategory =
         activeCategory === "All" || dish.category === activeCategory;
+
       const matchesSearch =
         !query ||
         dish.name.toLowerCase().includes(query) ||
@@ -335,143 +337,179 @@ export default function MenuPage() {
     `KES ${price.toLocaleString("en-KE")}`;
 
   return (
-    <main className="menu-premium min-h-screen bg-[#171412] text-white">
+    <main className="menu-premium min-h-screen bg-[#f7f2eb] text-[#291d18]">
       <SiteHeader />
-      <section className="relative isolate overflow-hidden border-b border-white/10 px-5 pb-12 pt-12 sm:px-8 sm:pt-20">
+
+      {/* Editorial hero */}
+      <section className="relative isolate flex min-h-[570px] items-end overflow-hidden bg-[#211712] px-5 pb-16 pt-24 sm:min-h-[650px] sm:px-10 sm:pb-20">
         <img
-          src="/images/restaurant/restaurant-photo-01.jpg"
-          alt="Chocolate City restaurant interior"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          src="/images/restaurant/restaurant-photo-02.jpg"
+          alt="Chocolate City dining experience"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-0 bg-gradient-to-r from-[#171412]/85 via-[#171412]/55 to-[#171412]/25"
-        />
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#f0783e]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1d1511]/90 via-[#1d1511]/60 to-[#1d1511]/20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1d1511]/70 via-transparent to-[#1d1511]/15" />
+
+        <div className="mx-auto w-full max-w-7xl">
+          <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#e9a17b]">
             Chocolate City · Bar & Restaurant
           </p>
-          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-            <div>
-              <h1 className="max-w-3xl text-4xl font-black tracking-tight sm:text-6xl">
-                Good food.
-                <span className="block text-[#f0783e]">Great moments.</span>
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
-                Explore our food and drinks menu, from breakfast favourites
-                and freshly prepared meals to pizzas, platters and desserts.
-              </p>
-            </div>
+
+          <h1 className="max-w-4xl font-serif text-6xl font-normal leading-[0.98] tracking-[-0.045em] text-[#fffaf4] sm:text-7xl md:text-8xl">
+            A menu made
+            <br />
+            for <em className="text-[#e9a17b]">moments.</em>
+          </h1>
+
+          <div className="mt-8 flex max-w-2xl flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-lg text-sm leading-7 text-white/75 sm:text-base">
+              From slow mornings and familiar favourites to memorable meals
+              shared around the table. Find something you'll love.
+            </p>
+
             <a
-              href="tel:+254703827955"
-              className="inline-flex w-fit items-center justify-center rounded-full bg-[#c65d24] px-6 py-4 font-bold text-white transition hover:bg-[#e16d2d]"
+              href="#menu-selection"
+              className="inline-flex w-fit shrink-0 items-center gap-3 border-b border-[#e9a17b] pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:text-[#e9a17b]"
             >
-              Reserve a table · 0703 827 955
+              Explore the menu <span aria-hidden="true">↘</span>
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-wider text-white/60">
-            <span className="rounded-full border border-white/15 px-4 py-2">
-              {dishes.length}+ menu listings
-            </span>
-            <span className="rounded-full border border-white/15 px-4 py-2">
-              Prices in KES
-            </span>
-            <span className="rounded-full border border-white/15 px-4 py-2">
-              Food & beverages
-            </span>
+
+          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/20 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">
+            <span>{dishes.length} menu listings</span>
+            <span>{categories.length - 1} categories</span>
+            <span>Prices in KES</span>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8">
-        <div className="sticky top-0 z-20 -mx-5 border-b border-white/10 bg-[#171412]/95 px-5 py-4 backdrop-blur sm:-mx-8 sm:px-8">
-          <label htmlFor="menu-search" className="sr-only">
-            Search the menu
-          </label>
-          <input
-            id="menu-search"
-            type="search"
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search dishes, drinks or categories..."
-            className="w-full rounded-lg border border-[#8f7766]/30 bg-[#211b17] px-5 py-4 text-sm text-[#f5eee7] shadow-sm outline-none placeholder:text-[#b9a99d]/55 transition duration-300 focus:border-[#c9784e] focus:ring-1 focus:ring-[#c9784e]/30"
-          />
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-              Browse by category
+      {/* Menu selection */}
+      <section
+        id="menu-selection"
+        className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24"
+      >
+        <div className="mb-12 grid gap-8 md:grid-cols-[1fr_0.75fr] md:items-end">
+          <div>
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#b95b32]">
+              Discover something delicious
             </p>
-            <select
-              value={activeCategory}
-              onChange={(event) => setActiveCategory(event.target.value)}
-              aria-label="Select menu category"
-              className="w-full appearance-none rounded-lg border border-[#8f7766]/35 bg-[#211b17] px-4 py-3 text-sm text-[#f5eee7] outline-none transition duration-300 hover:border-[#c9784e]/70 focus:border-[#c9784e] sm:w-80"
-            >
-              {categories.map((category) => (
-                <option key={category} value={category} className="bg-[#211b17]">
-                  {category}
-                </option>
-              ))}
-            </select>
+            <h2 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] sm:text-6xl">
+              The menu
+              <br />
+              <em>at Chocolate City.</em>
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-7 text-[#796b61] md:justify-self-end">
+            Explore our selection of food and beverages. Browse by category
+            or search for a particular dish or drink.
+          </p>
+        </div>
+
+        {/* Search */}
+        <div className="mb-8 border-y border-[#291d18]/15 py-5">
+          <label
+            htmlFor="menu-search"
+            className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-[#796b61]"
+          >
+            Find your favourite
+          </label>
+
+          <div className="flex items-center gap-4">
+            <span aria-hidden="true" className="text-2xl text-[#b95b32]">
+              ⌕
+            </span>
+            <input
+              id="menu-search"
+              type="search"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder="Search dishes, drinks or categories..."
+              className="w-full bg-transparent py-2 text-base text-[#291d18] outline-none placeholder:text-[#9b8d82] sm:text-lg"
+            />
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="shrink-0 text-xs font-semibold uppercase tracking-wider text-[#b95b32] hover:text-[#291d18]"
+              >
+                Clear
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="mb-6 mt-7 flex items-center justify-between gap-4 border-b border-white/[0.07] pb-5">
-          <p className="text-sm text-white/55">
-            Showing <span className="font-bold text-white">{visibleDishes.length}</span>{" "}
+        {/* Category navigation */}
+        <div className="mb-12">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#796b61]">
+            Browse categories
+          </p>
+
+          <div className="flex gap-2 overflow-x-auto pb-4">
+            {categories.map((category) => {
+              const selected = activeCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setActiveCategory(category)}
+                  aria-pressed={selected}
+                  className={`shrink-0 rounded-full border px-5 py-3 text-xs font-semibold transition ${
+                    selected
+                      ? "border-[#291d18] bg-[#291d18] text-[#fffaf4]"
+                      : "border-[#291d18]/20 bg-transparent text-[#c8b6a4] hover:border-[#b95b32] hover:text-[#b95b32]"
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Results heading */}
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-4 border-b border-[#291d18]/15 pb-5">
+          <div>
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#b95b32]">
+              The selection
+            </p>
+            <h3 className="font-serif text-3xl font-normal tracking-tight sm:text-4xl">
+              {activeCategory === "All" ? "Our complete menu" : activeCategory}
+            </h3>
+          </div>
+
+          <p className="text-xs text-[#796b61]">
+            Showing <strong className="text-[#291d18]">{visibleDishes.length}</strong>{" "}
             {visibleDishes.length === 1 ? "item" : "items"}
           </p>
-          {search && (
-            <button
-              type="button"
-              onClick={() => setSearch("")}
-              className="text-sm font-semibold text-[#f0783e] hover:text-white"
-            >
-              Clear search
-            </button>
-          )}
         </div>
 
-        <div className="mb-5 mt-10 border-b border-[#8f7766]/25 pb-7 sm:mt-14">
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f0783e]">
-            The Chocolate City selection
-          </p>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-serif text-3xl font-normal tracking-[-0.035em] text-[#f5eee7] sm:text-[2.65rem]">
-                {activeCategory === "All" ? "Our Menu" : activeCategory}
-              </h2>
-              <p className="mt-2 max-w-xl text-sm leading-6 text-white/45">
-                Thoughtfully prepared favourites, made for good food and great moments.
-              </p>
-            </div>
-            <span className="text-xs uppercase tracking-[0.16em] text-white/40">
-              {visibleDishes.length} {visibleDishes.length === 1 ? "item" : "items"}
-            </span>
-          </div>
-        </div>
-
+        {/* Dish listings */}
         {visibleDishes.length > 0 ? (
           <div className="grid gap-x-14 lg:grid-cols-2">
             {visibleDishes.map((dish, index) => (
               <article
                 key={`${dish.category}-${dish.name}-${index}`}
-                className="group border-b border-white/[0.08] py-6 transition-all duration-300 hover:border-[#c9784e]/55 hover:bg-white/[0.015] sm:py-7"
+                className="group border-b border-[#291d18]/10 py-6 transition-colors hover:border-[#b95b32]/50 sm:py-7"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="menu-dish-category mb-2.5 text-[9px] font-semibold uppercase tracking-[0.27em] text-[#d98255]/90">
+                <div className="flex items-start justify-between gap-5">
+                  <div className="min-w-0">
+                    <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.23em] text-[#b95b32]">
                       {dish.category}
                     </p>
-                    <h2 className="menu-dish-name font-serif text-[1.3rem] font-normal tracking-[-0.02em] text-[#f5eee7] transition-colors duration-300 group-hover:text-[#e8a17c]">
+                    <h4 className="font-serif text-xl font-normal leading-snug tracking-[-0.02em] text-[#f3e8d9] transition-colors group-hover:text-[#e58b5d] sm:text-2xl">
                       {dish.name}
-                    </h2>
+                    </h4>
                   </div>
-                  <span className="menu-dish-price">
+
+                  <span className="shrink-0 pt-5 text-sm font-semibold tabular-nums text-[#c8b6a4]">
                     {dish.price === undefined ? "Ask us" : formatPrice(dish.price)}
                   </span>
                 </div>
+
                 {dish.note && (
-                  <p className="menu-dish-description mt-2.5 max-w-md text-[12px] leading-6 text-[#b9aaa0]/65">
+                  <p className="mt-3 max-w-md text-xs leading-6 text-[#796b61]">
                     {dish.note}
                   </p>
                 )}
@@ -479,10 +517,10 @@ export default function MenuPage() {
             ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-white/10 px-6 py-16 text-center">
-            <h2 className="text-xl font-bold">No menu items found</h2>
-            <p className="mt-2 text-sm text-white/55">
-              Try another search term or choose a different category.
+          <div className="border border-[#291d18]/15 px-6 py-16 text-center">
+            <h3 className="font-serif text-3xl">Nothing found just yet.</h3>
+            <p className="mt-3 text-sm text-[#796b61]">
+              Try another search term or browse a different category.
             </p>
             <button
               type="button"
@@ -490,47 +528,67 @@ export default function MenuPage() {
                 setSearch("");
                 setActiveCategory("All");
               }}
-              className="mt-5 rounded-full bg-[#c65d24] px-5 py-3 text-sm font-bold hover:bg-[#e16d2d]"
+              className="mt-6 rounded-full bg-[#291d18] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#b95b32]"
             >
-              Show full menu
+              View the full menu
             </button>
           </div>
         )}
+
+        <p className="mt-10 text-[11px] leading-6 text-[#796b61]">
+          Menu items and prices are transcribed from the supplied Chocolate
+          City Food Menu 2026 PDF. Please confirm availability and prices
+          with the restaurant before ordering.
+        </p>
       </section>
 
-      <section className="border-t border-white/10 bg-[#211b17] px-5 py-14 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-[#c65d24]/30 bg-[#c65d24]/[0.08] p-7 sm:p-10 md:flex-row md:items-center md:justify-between">
+      {/* Reservation invitation */}
+      <section className="relative isolate overflow-hidden bg-[#291d18] px-5 py-20 text-[#fffaf4] sm:px-8 sm:py-24">
+        <img
+          src="/images/restaurant/restaurant-photo-18.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 -z-10 bg-[#291d18]/75" />
+
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#f0783e]">
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.28em] text-[#e9a17b]">
               Your table is waiting
             </p>
-            <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-              Make it a Chocolate City moment.
+            <h2 className="max-w-2xl font-serif text-4xl font-normal leading-tight tracking-[-0.035em] sm:text-6xl">
+              Good food is better
+              <br />
+              <em>when shared.</em>
             </h2>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-white/60">
-              Call our team to ask about availability, menu items and current prices.
+            <p className="mt-5 max-w-lg text-sm leading-7 text-white/65">
+              Planning a meal or a special gathering? Speak to our team about
+              reservations and menu availability.
             </p>
           </div>
+
           <a
             href="tel:+254703827955"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#c65d24] px-7 py-4 font-bold text-white hover:bg-[#e16d2d]"
+            className="inline-flex w-fit shrink-0 items-center justify-center border border-[#e9a17b] px-7 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#e9a17b] hover:text-[#291d18]"
           >
             Call 0703 827 955
           </a>
         </div>
-        <div className="mx-auto mt-8 flex max-w-7xl flex-wrap gap-5 text-sm text-white/50">
-          <Link href="/" className="hover:text-white">Home</Link>
-          <Link href="/locations" className="hover:text-white">Our locations</Link>
-          <Link href="/events" className="hover:text-white">Events</Link>
-          <Link href="/contact" className="hover:text-white">Contact</Link>
-        </div>
-        <p className="mx-auto mt-6 max-w-7xl text-xs leading-5 text-white/35">
-          Menu items and prices are transcribed from the supplied Chocolate City
-          Food Menu 2026 PDF. Please confirm availability and prices with the
-          restaurant before ordering. Some spellings in the source menu have
-          been standardized for readability.
-        </p>
       </section>
+
+      <footer className="bg-[#211712] px-5 py-8 text-[#fffaf4]/60 sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 text-xs">
+          <p>Chocolate City · Bar & Restaurant</p>
+          <nav className="flex flex-wrap gap-5">
+            <Link href="/" className="transition hover:text-white">Home</Link>
+            <Link href="/about" className="transition hover:text-white">About</Link>
+            <Link href="/locations" className="transition hover:text-white">Locations</Link>
+            <Link href="/events" className="transition hover:text-white">Events</Link>
+            <Link href="/contact" className="transition hover:text-white">Contact</Link>
+          </nav>
+        </div>
+      </footer>
     </main>
   );
 }
