@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import {
@@ -19,8 +19,14 @@ export default function ReservationsPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [enquiryId, setEnquiryId] = useState("");
 
+  const submissionLock = useRef(false);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (submissionLock.current) return;
+
+    submissionLock.current = true;
     setSubmitting(true);
     setErrorMessage("");
 
@@ -55,6 +61,7 @@ export default function ReservationsPage() {
         "We couldn't reach the server. Please check your connection and try again."
       );
     } finally {
+      submissionLock.current = false;
       setSubmitting(false);
     }
   }
