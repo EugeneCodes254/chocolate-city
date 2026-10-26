@@ -352,7 +352,9 @@ export default function ReservationsPage() {
                           Select a location
                         </option>
                         <option value="Kileleshwa">Kileleshwa</option>
-                        <option value="Machakos">Machakos</option>
+                        <option value="Machakos" disabled>
+                          Machakos — temporarily closed for renovation
+                        </option>
                         <option value="Karen">Karen</option>
                         <option value="Other">Other / please advise</option>
                       </select>

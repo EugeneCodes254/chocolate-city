@@ -5,7 +5,6 @@ export const runtime = "nodejs";
 
 const allowedLocations = new Set([
   "Kileleshwa",
-  "Machakos",
   "Karen",
   "Other",
 ]);
@@ -73,6 +72,16 @@ export async function POST(request: Request) {
       : "";
   const location =
     typeof body.location === "string" ? body.location : "";
+
+  if (location === "Machakos") {
+    return NextResponse.json(
+      {
+        error:
+          "Machakos is temporarily closed for renovation. Please select Kileleshwa or Karen instead.",
+      },
+      { status: 400 },
+    );
+  }
   const notes =
     typeof body.notes === "string" ? body.notes.trim() : "";
 
