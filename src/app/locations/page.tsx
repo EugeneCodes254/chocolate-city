@@ -40,7 +40,7 @@ const branches = [
     description:
       "Our Machakos branch is currently closed while renovation works are underway. We look forward to welcoming you back once renovations are complete.",
     map: "https://maps.app.goo.gl/98EL4mgC9MeCN3cJ6",
-    image: "/images/restaurant/restaurant-photo-09.jpg",
+    image: "/images/restaurant/machakos-renovation-premium.webp",
     number: "02",
   },
   {
@@ -52,7 +52,7 @@ const branches = [
     description:
       "Visit our Karen branch for dine-in food, drinks and good company.",
     map: "https://www.google.com/maps/dir/?api=1&destination=Chocolate+City+Langata",
-    image: "/images/restaurant/restaurant-photo-12.jpg",
+    image: "/images/restaurant/restaurant-photo-09.jpg",
     number: "03",
   },
 ];
