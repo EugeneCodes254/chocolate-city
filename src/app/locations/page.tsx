@@ -35,9 +35,10 @@ const branches = [
     area: "Machakos, Kenya",
     phone: "+254 703 827 955",
     tel: "+254703827955",
-    service: "Dine-in restaurant · Conferencing",
+    status: "Temporarily closed · Under renovation",
+    service: "Currently closed for renovation",
     description:
-      "Enjoy a welcoming dine-in restaurant experience in Machakos, with food, drinks and space for gatherings.",
+      "Our Machakos branch is currently closed while renovation works are underway. We look forward to welcoming you back once renovations are complete.",
     map: "https://maps.app.goo.gl/98EL4mgC9MeCN3cJ6",
     image: "/images/restaurant/restaurant-photo-09.jpg",
     number: "02",
@@ -158,6 +159,12 @@ export default function LocationsPage() {
                   <h3 className="font-serif text-4xl font-normal tracking-tight">
                     {branch.name}
                   </h3>
+
+                  {branch.status && (
+                    <div className="mt-4 w-fit border border-[#b95b32]/30 bg-[#b95b32]/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#a34828]">
+                      {branch.status}
+                    </div>
+                  )}
 
                   <p className="mt-4 text-sm leading-7 text-[#796b61]">
                     {branch.description}
