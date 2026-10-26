@@ -27,7 +27,7 @@ const branches = [
     description:
       "Enjoy dine-in food, drinks and good company. Meeting rooms are also available to book for private meetings at this location.",
     map: "https://maps.app.goo.gl/m8SWXGUffdbdcJ7W8",
-    image: "/images/restaurant/restaurant-photo-04.jpg",
+    image: "/images/restaurant/kileleshwa-location.webp",
     number: "01",
   },
   {
