@@ -188,14 +188,27 @@ export default function LocationsPage() {
                   </div>
 
                   <div className="mt-8 flex flex-wrap items-center gap-6">
-                    <a
-                      href={branch.map}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-[#291d18] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#b95b32]"
-                    >
-                      Get directions <ArrowUpRight size={15} />
-                    </a>
+                    {branch.status ? (
+                      <span
+                        aria-disabled="true"
+                        className="inline-flex cursor-not-allowed items-center justify-center gap-3 rounded-sm bg-[#eadbd2] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-[#a77b68]"
+                      >
+                        <MapPin size={16} />
+                        View on Google Maps
+                        <ArrowUpRight size={15} />
+                      </span>
+                    ) : (
+                      <a
+                        href={branch.map}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-3 rounded-sm bg-[#b95b32] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] text-white shadow-sm transition hover:bg-[#963f22] hover:shadow-md"
+                      >
+                        <MapPin size={16} />
+                        View on Google Maps
+                        <ArrowUpRight size={15} />
+                      </a>
+                    )}
 
                     <a
                       href={`tel:${branch.tel}`}
