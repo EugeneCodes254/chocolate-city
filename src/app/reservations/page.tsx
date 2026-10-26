@@ -286,7 +286,10 @@ export default function ReservationsPage() {
                         name="phone"
                         type="tel"
                         autoComplete="tel"
-                        placeholder="+254..."
+                        placeholder="0712345678 or +254712345678"
+                        pattern="(?:0[0-9]{9}|[+][1-9][0-9]{7,14}|0[0-9 ()-]{8,18}[0-9]|[+][1-9][0-9 ()-]{7,18}[0-9])"
+                        title="Enter a valid phone number, such as 0712345678 or +254712345678."
+                        maxLength={40}
                         required
                         className="min-h-12 w-full border border-[#291d18]/15 bg-white px-4 py-3 text-sm text-[#291d18] outline-none transition placeholder:text-[#a79a90] focus:border-[#b95b32]"
                       />

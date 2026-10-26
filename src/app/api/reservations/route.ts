@@ -13,6 +13,16 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function isValidPhone(phone: string) {
+  const normalized = phone.replace(/[\s().-]/g, "");
+
+  if (/^0\d{9}$/.test(normalized)) {
+    return true;
+  }
+
+  return /^\+?[1-9]\d{7,14}$/.test(normalized);
+}
+
 function todayInNairobi() {
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Africa/Nairobi",
@@ -90,8 +100,7 @@ export async function POST(request: Request) {
     name.length > 120 ||
     !isValidEmail(email) ||
     email.length > 254 ||
-    phone.length < 7 ||
-    phone.length > 40 ||
+    !isValidPhone(phone) ||
     !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
     !/^\d{2}:\d{2}$/.test(time) ||
     !allowedLocations.has(location) ||
