@@ -4287,3 +4287,131 @@ button {
     min-height: 50px;
   }
 }
+
+
+
+/* Chocolate City — final premium menu theme alignment */
+
+.menu-premium {
+  background: #151210 !important;
+  color: #f8f1e9 !important;
+}
+
+.menu-premium #menu-selection {
+  background: #151210 !important;
+}
+
+.menu-premium #menu-selection h2,
+.menu-premium #menu-selection h3,
+.menu-premium #menu-selection h4 {
+  color: #f4e9df !important;
+}
+
+.menu-premium #menu-selection h4 {
+  transition: color 220ms ease;
+}
+
+.menu-premium #menu-selection article:hover h4 {
+  color: #f5a477 !important;
+}
+
+.menu-premium #menu-selection article {
+  border-color: rgba(239, 220, 205, 0.14) !important;
+  background: linear-gradient(145deg, #241c17, #1b1613) !important;
+  border-radius: 5px;
+}
+
+.menu-premium #menu-selection article > div > span {
+  color: #f5a477 !important;
+  font-weight: 700;
+}
+
+.menu-premium #menu-selection article > div > div > p,
+.menu-premium #menu-selection article > p {
+  color: #b6a79b !important;
+}
+
+.menu-premium #menu-selection article > div > div > p:first-child {
+  color: #ed986b !important;
+}
+
+.menu-premium #menu-selection > div > p,
+.menu-premium #menu-selection label {
+  color: #c9bdb2;
+}
+
+.menu-premium #menu-selection button {
+  color: #e8dcd1;
+}
+
+.menu-premium #menu-selection button[aria-pressed="true"] {
+  background: #c65d24 !important;
+  border-color: #c65d24 !important;
+  color: #fffaf4 !important;
+}
+
+.menu-premium #menu-selection button[aria-pressed="false"] {
+  color: #d2c3b7 !important;
+}
+
+.menu-premium #menu-selection input[type="search"] {
+  color: #fff7ef !important;
+}
+
+.menu-premium #menu-selection input[type="search"]::placeholder {
+  color: #a99b90 !important;
+}
+
+.menu-premium #menu-selection > section {
+  border-color: rgba(239, 220, 205, 0.13);
+}
+
+.menu-premium #menu-selection figure figcaption {
+  color: #c9b4a5 !important;
+}
+
+.menu-premium #menu-selection figure > div {
+  border: 1px solid rgba(239, 220, 205, 0.12);
+}
+
+.menu-premium #menu-selection > p {
+  color: #b6a79b !important;
+}
+
+.menu-premium #menu-selection > p strong {
+  color: #f5a477 !important;
+}
+
+.menu-premium #menu-selection article,
+.menu-premium #menu-selection button {
+  transition: all 220ms ease;
+}
+
+.menu-premium #menu-selection {
+  scrollbar-width: none;
+}
+
+.menu-premium #menu-selection *::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .menu-premium #menu-selection article {
+    padding: 19px !important;
+  }
+
+  .menu-premium #menu-selection figure figcaption {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+/* Premium menu keyboard focus styling */
+.menu-premium #menu-selection button:focus-visible {
+  outline: 2px solid #ed986b !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 4px rgba(198, 93, 36, 0.16) !important;
+}
+
+

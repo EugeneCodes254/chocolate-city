@@ -462,7 +462,7 @@ export default function MenuPage() {
                   className={`shrink-0 rounded-full border px-5 py-3 text-xs font-semibold transition ${
                     selected
                       ? "border-[#291d18] bg-[#291d18] text-[#fffaf4]"
-                      : "border-[#291d18]/20 bg-transparent text-[#c8b6a4] hover:border-[#b95b32] hover:text-[#b95b32]"
+                      : "border-[#291d18]/20 bg-transparent text-[#795b49] hover:border-[#b95b32] hover:text-[#b95b32]"
                   }`}
                 >
                   {category}
@@ -471,6 +471,87 @@ export default function MenuPage() {
             })}
           </div>
         </div>
+
+
+        {/* Chocolate City food and drinks gallery */}
+        <section
+          aria-label="Chocolate City food and drinks gallery"
+          className="mb-16"
+        >
+          <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#b95b32]">
+                A taste of Chocolate City
+              </p>
+              <h3 className="font-serif text-3xl font-normal tracking-tight sm:text-4xl">
+                Made to be enjoyed.
+              </h3>
+            </div>
+            <p className="max-w-xs text-xs leading-6 text-[#796b61]">
+              Explore a selection of our drinks and freshly served meals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+            {[
+              {
+                src: "/images/menu/drink-lime.webp",
+                alt: "Refreshing lime drink served over ice",
+                label: "From the bar",
+              },
+              {
+                src: "/images/menu/drink-red-citrus.webp",
+                alt: "Red citrus drink with a fresh garnish",
+                label: "A refreshing pour",
+              },
+              {
+                src: "/images/menu/drink-blue-cocktail-fries.webp",
+                alt: "Blue drink served with golden fries",
+                label: "Drinks and sides",
+              },
+              {
+                src: "/images/menu/fish-tomato-sauce.webp",
+                alt: "Whole fish served with tomato sauce and lime",
+                label: "From the kitchen",
+              },
+              {
+                src: "/images/menu/fish-tomato-overhead.webp",
+                alt: "Fish with tomato topping and fresh herbs",
+                label: "Made for sharing",
+              },
+              {
+                src: "/images/menu/breaded-fish-closeup.webp",
+                alt: "Golden breaded fish with chips and sauce",
+                label: "Golden favourites",
+              },
+              {
+                src: "/images/menu/breaded-fish-chips.webp",
+                alt: "Breaded fish served with chips and dipping sauce",
+                label: "A satisfying plate",
+              },
+              {
+                src: "/images/menu/fish-greens-sides.webp",
+                alt: "Fish served with greens, salad and traditional sides",
+                label: "A taste of more",
+              },
+            ].map((photo) => (
+              <figure key={photo.src} className="group min-w-0">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#e9dfd3]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <figcaption className="pt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#796b61]">
+                  {photo.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
         {/* Results heading */}
         <div className="mb-7 flex flex-wrap items-end justify-between gap-4 border-b border-[#291d18]/15 pb-5">
@@ -502,12 +583,12 @@ export default function MenuPage() {
                     <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.23em] text-[#b95b32]">
                       {dish.category}
                     </p>
-                    <h4 className="font-serif text-xl font-normal leading-snug tracking-[-0.02em] text-[#f3e8d9] transition-colors group-hover:text-[#e58b5d] sm:text-2xl">
+                    <h4 className="font-serif text-xl font-normal leading-snug tracking-[-0.02em] text-[#291d18] transition-colors group-hover:text-[#b95b32] sm:text-2xl">
                       {dish.name}
                     </h4>
                   </div>
 
-                  <span className="shrink-0 pt-5 text-sm font-semibold tabular-nums text-[#c8b6a4]">
+                  <span className="shrink-0 pt-5 text-sm font-semibold tabular-nums text-[#795b49]">
                     {dish.price === undefined ? "Ask us" : formatPrice(dish.price)}
                   </span>
                 </div>
