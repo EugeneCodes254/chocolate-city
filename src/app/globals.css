@@ -4207,3 +4207,83 @@ button {
   }
 }
 
+/* Chocolate City — refined mobile navigation */
+
+@media (max-width: 900px) {
+  .site-header .main-nav {
+    top: calc(100% + 8px);
+    right: 5%;
+    left: 5%;
+    width: auto;
+    max-height: calc(100svh - 100px);
+    overflow-y: auto;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .22);
+    z-index: 40;
+    overscroll-behavior: contain;
+  }
+
+  .site-header:not(.site-header-inner) .main-nav {
+    background: #211914;
+    border: 1px solid rgba(255, 255, 255, .14);
+  }
+
+  .site-header-inner .main-nav {
+    background: #f7f4ef;
+    border: 1px solid rgba(38, 29, 23, .12);
+    box-shadow: 0 18px 42px rgba(26, 18, 12, .16);
+  }
+
+  .site-header .main-nav > a:not(.nav-cta) {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(128, 105, 88, .2);
+    font-size: 12px;
+    letter-spacing: .1em;
+  }
+
+  .site-header .nav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 50px;
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 14px 18px;
+    border-radius: 999px;
+    gap: 10px;
+  }
+
+  .site-header .mobile-toggle {
+    position: relative;
+    z-index: 41;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .site-header .mobile-toggle:focus-visible,
+  .site-header .main-nav a:focus-visible {
+    outline: 2px solid #d68b45;
+    outline-offset: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header .main-nav {
+    right: 16px;
+    left: 16px;
+    padding: 10px;
+  }
+
+  .site-header .main-nav > a:not(.nav-cta) {
+    min-height: 50px;
+  }
+}
