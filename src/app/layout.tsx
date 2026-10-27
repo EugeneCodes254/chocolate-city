@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + "www.chocolatecity.co.ke"),
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-KE">
-      <body>{children}</body>
+      <body>{children}<WhatsAppChat /></body>
     </html>
   );
 }
