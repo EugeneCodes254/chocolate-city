@@ -228,6 +228,76 @@ export default function LocationsPage() {
           </p>
         </section>
 
+        {/* Branch video showcases */}
+        <section className="bg-[#291d18] px-5 py-20 text-[#fffaf4] sm:px-8 sm:py-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-12 max-w-2xl">
+              <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#e9a17b]">
+                A closer look
+              </p>
+              <h2 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] sm:text-6xl">
+                Step inside
+                <br />
+                <em className="text-[#e9a17b]">Chocolate City.</em>
+              </h2>
+              <p className="mt-6 max-w-xl text-sm leading-7 text-white/65">
+                Discover the spaces, atmosphere and experiences waiting for
+                you at our Kileleshwa and Karen branches.
+              </p>
+            </div>
+
+            <div className="grid gap-10 md:grid-cols-2 md:items-start">
+              <article>
+                <div className="flex aspect-video items-center justify-center overflow-hidden bg-black">
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    aria-label="A look inside Chocolate City Kileleshwa"
+                    className="h-full w-full object-contain"
+                  >
+                    <source src="/videos/kileleshwa-branch.mp4" type="video/mp4" />
+                    Your browser does not support video playback.
+                  </video>
+                </div>
+                <div className="mt-6 flex items-end justify-between gap-4 border-b border-white/20 pb-5">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#e9a17b]">
+                      Nairobi
+                    </p>
+                    <h3 className="mt-2 font-serif text-3xl">Kileleshwa</h3>
+                  </div>
+                  <span className="text-xs text-white/55">01 / 02</span>
+                </div>
+              </article>
+
+              <article>
+                <div className="aspect-video overflow-hidden bg-black">
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    aria-label="A look inside Chocolate City Karen"
+                    className="h-full w-full object-contain"
+                  >
+                    <source src="/videos/karen-branch.mp4" type="video/mp4" />
+                    Your browser does not support video playback.
+                  </video>
+                </div>
+                <div className="mt-6 flex items-end justify-between gap-4 border-b border-white/20 pb-5">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#e9a17b]">
+                      Nairobi
+                    </p>
+                    <h3 className="mt-2 font-serif text-3xl">Karen</h3>
+                  </div>
+                  <span className="text-xs text-white/55">02 / 02</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* Kileleshwa meeting rooms */}
         <section className="border-y border-[#291d18]/10 bg-[#eee5da] px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1fr_0.7fr] md:items-center">
