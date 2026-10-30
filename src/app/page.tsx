@@ -18,6 +18,7 @@ const menuItems = [
     title: "The Dining Experience",
     category: "FOOD & DINING",
     image: "/images/restaurant/restaurant-photo-04.jpg",
+    video: "/videos/dining-experience.mp4",
     description: "Good food, thoughtful details and moments worth sharing.",
     href: "/menu",
   },
@@ -26,6 +27,7 @@ const menuItems = [
     title: "Drinks & Good Company",
     category: "BAR & LOUNGE",
     image: "/images/restaurant/restaurant-photo-09.jpg",
+    video: "/videos/drinks-lounge.mp4",
     description: "Settle in, raise a glass and enjoy the atmosphere.",
     href: "/menu",
   },
@@ -34,6 +36,7 @@ const menuItems = [
     title: "Your Next Celebration",
     category: "EVENTS & EXPERIENCES",
     image: "/images/restaurant/restaurant-photo-16.jpg",
+    video: null,
     description: "Bring people together for the moments that matter.",
     href: "/events",
   },
@@ -231,7 +234,21 @@ export default function Home() {
               transition={{ duration: 0.55, delay: index * 0.12 }}
             >
               <div className="offering-image">
-                <Image src={item.image} alt="" fill sizes="(max-width: 600px) 88vw, (max-width: 900px) 30vw, 26vw" className="offering-photo" />
+                {item.video ? (
+                  <video
+                    src={item.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={item.image}
+                    className="offering-photo"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <Image src={item.image} alt="" fill sizes="(max-width: 600px) 88vw, (max-width: 900px) 30vw, 26vw" className="offering-photo" />
+                )}
                 <span className="card-number">{item.number}</span>
                 <span className="card-arrow">
                   <ArrowUpRight size={19} />
