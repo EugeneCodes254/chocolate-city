@@ -14,7 +14,8 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata: Metadata = {
   title: "Our Story | Chocolate City Kenya",
   description:
-    "Discover Chocolate City Kenya — a destination for dining, drinks, hospitality and memorable experiences.",
+    "Discover the story behind Chocolate City Kenya, a hospitality destination for dining, drinks, celebrations and memorable experiences.",
+  alternates: { canonical: "/about" },
 };
 
 const experiences = [

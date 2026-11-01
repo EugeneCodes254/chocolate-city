@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppChat from "@/components/WhatsAppChat";
+import RestaurantSchema from "@/components/RestaurantSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + "www.chocolatecity.co.ke"),
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chocolate City Kenya | Dining, Drinks & Experiences",
     description: "Good food, great company and memorable dining, drinks and events at Chocolate City Kenya.",
-    url: "https://www.chocolatecity.co.ke",
+    url: "https://" + "www.chocolatecity.co.ke",
     siteName: "Chocolate City Kenya",
     locale: "en_KE",
     type: "website",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-KE">
-      <body>{children}<WhatsAppChat /></body>
+      <body><RestaurantSchema />{children}<WhatsAppChat /></body>
     </html>
   );
 }

@@ -12,9 +12,10 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Locations | Chocolate City Kenya",
+  title: "Chocolate City Locations | Kileleshwa & Karen, Nairobi",
   description:
-    "Find Chocolate City dine-in restaurants in Kileleshwa, Machakos and Karen, explore directions and plan your visit.",
+    "Visit Chocolate City in Kileleshwa or Karen, Nairobi, for dining, drinks and memorable hospitality experiences. Explore branch information and directions.",
+  alternates: { canonical: "/locations" },
 };
 
 const branches = [

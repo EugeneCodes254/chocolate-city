@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
@@ -8,6 +9,21 @@ import {
   BriefcaseBusiness,
   PartyPopper,
 } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Events & Private Functions in Nairobi | Chocolate City",
+  description:
+    "Host birthdays, corporate gatherings and group dining experiences at Chocolate City Kenya. Explore our event spaces and plan your next gathering.",
+  alternates: {
+    canonical: "/events",
+  },
+  openGraph: {
+    title: "Events & Private Functions | Chocolate City Kenya",
+    description:
+      "Discover private celebrations, corporate gatherings and group dining at Chocolate City Kenya.",
+  },
+};
 
 const experiences = [
   {
