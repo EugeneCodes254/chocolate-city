@@ -40,7 +40,7 @@ const experiences = [
     category: "BUSINESS & NETWORKING",
     description:
       "Bring colleagues and clients together for business gatherings and conferencing at Chocolate City.",
-    image: "/images/restaurant/restaurant-photo-09.jpg",
+    image: "/images/events/corporate-gatherings.jpg",
     icon: BriefcaseBusiness,
     number: "02",
   },
@@ -58,7 +58,7 @@ const experiences = [
     category: "PRIVATE MEETINGS",
     description:
       "Rooms at our Kileleshwa location can be booked for private meetings. Contact the team to discuss availability and arrangements.",
-    image: "/images/restaurant/restaurant-photo-16.jpg",
+    image: "/images/events/kileleshwa-meeting-rooms.jpeg",
     icon: BriefcaseBusiness,
     number: "04",
   },
