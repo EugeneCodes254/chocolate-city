@@ -36,7 +36,7 @@ const menuItems = [
     title: "Your Next Celebration",
     category: "EVENTS & EXPERIENCES",
     image: "/images/restaurant/restaurant-photo-16.jpg",
-    video: null,
+    video: "/videos/celebration.mp4",
     description: "Bring people together for the moments that matter.",
     href: "/events",
   },
@@ -96,7 +96,21 @@ export default function Home() {
       </header>
 
       <section className="hero" id="home">
-        <div className="hero-image" />
+        <video
+          className="hero-image"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/videos/chocolate-city-hero-poster.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="/videos/chocolate-city-hero.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="hero-overlay" />
 
         <div className="hero-content">

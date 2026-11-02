@@ -4417,3 +4417,372 @@ button {
 }
 
 
+
+/* Chocolate City — Kileleshwa cinematic hero video */
+.hero video.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  background-image: none;
+  z-index: 0;
+  transform: scale(1.035);
+  animation: chocolate-city-video-settle 1.8s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.hero .hero-overlay {
+  z-index: 1;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes chocolate-city-video-settle {
+  from {
+    transform: scale(1.035);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero video.hero-image {
+    object-position: center center;
+    animation-duration: 1.4s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero video.hero-image {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* Chocolate City — Refined premium homepage navigation */
+@media (min-width: 769px) {
+  .site-header {
+    padding: 24px clamp(32px, 6vw, 88px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header .brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .site-header .floating-brand-logo {
+    width: clamp(135px, 12vw, 165px);
+    height: auto;
+    max-height: 52px;
+    object-fit: contain;
+  }
+
+  .site-header .main-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 2.5vw, 38px);
+  }
+
+  .site-header .main-nav > a:not(.nav-cta) {
+    position: relative;
+    padding: 9px 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 220ms ease;
+  }
+
+  .site-header .main-nav > a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 1px;
+    background: #e9a078;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 260ms ease;
+  }
+
+  .site-header .main-nav > a:not(.nav-cta):hover {
+    color: #e9a078;
+  }
+
+  .site-header .main-nav > a:not(.nav-cta):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .site-header .main-nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 1px solid rgba(233, 160, 120, 0.75);
+    border-radius: 3px;
+    background: rgba(198, 93, 36, 0.94);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 220ms ease, border-color 220ms ease,
+      transform 220ms ease;
+  }
+
+  .site-header .main-nav .nav-cta:hover {
+    background: #a94d27;
+    border-color: #e9a078;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 17px 22px;
+  }
+
+  .site-header .floating-brand-logo {
+    width: 130px;
+    max-height: 42px;
+    object-fit: contain;
+  }
+
+  .site-header .mobile-toggle {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    background: rgba(30, 20, 15, 0.25);
+    color: #fff;
+    transition: background 200ms ease, border-color 200ms ease;
+  }
+
+  .site-header .mobile-toggle:hover {
+    background: rgba(198, 93, 36, 0.75);
+    border-color: #e9a078;
+  }
+
+  .site-header .main-nav.nav-open {
+    padding: 17px;
+    border: 1px solid rgba(233, 160, 120, 0.2);
+    border-radius: 4px;
+    background: rgba(30, 20, 17, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  }
+
+  .site-header .main-nav.nav-open > a:not(.nav-cta) {
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    color: #f7eee8;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .site-header .main-nav.nav-open .nav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 13px;
+    padding: 15px;
+    border-radius: 3px;
+    background: #c65d24;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid #e9a078;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .site-header *::before,
+  .site-header *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+/* Chocolate City — Premium editorial Our Story section */
+.intro.section-pad {
+  padding: clamp(95px, 10vw, 145px) clamp(7%, 9vw, 12%);
+  background: #f5f0e9;
+}
+
+.intro .intro-label {
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(67, 48, 37, 0.16);
+}
+
+.intro .intro-label .eyebrow {
+  color: #a45b37;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.intro .intro-index {
+  color: #88796f;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.intro .intro-content {
+  grid-template-columns: 1.15fr 0.65fr;
+  align-items: end;
+  gap: clamp(45px, 9vw, 135px);
+  margin: clamp(42px, 5vw, 68px) 0 55px;
+}
+
+.intro .intro-content h2 {
+  max-width: 720px;
+  font-family: var(--font-display);
+  font-size: clamp(49px, 6.2vw, 82px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.intro .intro-content h2 em {
+  color: #bd6338;
+  font-weight: 400;
+}
+
+.intro .intro-copy {
+  max-width: 390px;
+  padding-bottom: 5px;
+}
+
+.intro .intro-copy p {
+  color: #75675e;
+  font-size: 13px;
+  line-height: 2.05;
+  margin-bottom: 28px;
+}
+
+.intro .intro-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #a65330;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.intro .intro-copy .text-link svg {
+  transition: transform 220ms ease;
+}
+
+.intro .intro-copy .text-link:hover svg {
+  transform: translateX(5px);
+}
+
+.intro .intro-image-wrap {
+  overflow: hidden;
+}
+
+.intro .intro-image {
+  min-height: clamp(390px, 48vw, 650px);
+  background-position: center 55%;
+  background-size: cover;
+  transform: scale(1.001);
+  transition: transform 900ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.intro .intro-image-wrap:hover .intro-image {
+  transform: scale(1.025);
+}
+
+.intro .image-note {
+  align-items: center;
+  padding-top: 17px;
+  border-top: 1px solid rgba(67, 48, 37, 0.16);
+  color: #81736a;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+
+.intro .image-note span:first-child {
+  color: #a45b37;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .intro.section-pad {
+    padding: 78px 7%;
+  }
+
+  .intro .intro-content {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    margin: 35px 0 32px;
+  }
+
+  .intro .intro-content h2 {
+    font-size: clamp(45px, 11vw, 64px);
+    line-height: 1.04;
+  }
+
+  .intro .intro-copy {
+    max-width: 480px;
+  }
+
+  .intro .intro-copy p {
+    font-size: 12px;
+    line-height: 1.95;
+  }
+
+  .intro .intro-image {
+    min-height: 340px;
+  }
+
+  .intro .image-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro .intro-image,
+  .intro .intro-copy .text-link svg {
+    transition: none;
+  }
+}
+
