@@ -490,8 +490,8 @@ button {
 }
 
 .experience-image {
-  background-image: url("/images/restaurant/restaurant-photo-12.jpg");
-  background-position: center;
+  background-image: url("/images/restaurant/chocolate-city-kileleshwa.jpg");
+  background-position: center top;
   background-size: cover;
 }
 
@@ -888,7 +888,7 @@ button {
   }
 
   .experience-image {
-    background-position: 58% center;
+    background-position: center top;
   }
 
   .experience-overlay {
@@ -2501,8 +2501,8 @@ button {
 }
 
 .experience-image {
-  background-image: url("/images/restaurant/restaurant-photo-12.jpg");
-  background-position: center 48%;
+  background-image: url("/images/restaurant/chocolate-city-kileleshwa.jpg");
+  background-position: center top;
 }
 
 .location-photo {
@@ -4782,6 +4782,392 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .intro .intro-image,
   .intro .intro-copy .text-link svg {
+    transition: none;
+  }
+}
+
+
+/* Chocolate City — Premium video offering cards */
+.offering-card {
+  position: relative;
+  text-decoration: none;
+}
+
+.offering-image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 0.86;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  background: #211b18;
+  box-shadow: 0 12px 32px rgba(35, 25, 19, 0.08);
+}
+
+.offering-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 12, 10, 0.22) 0%,
+    transparent 24%,
+    transparent 55%,
+    rgba(15, 12, 10, 0.48) 100%
+  );
+  transition: opacity 500ms ease;
+}
+
+.offering-image img,
+.offering-image video,
+.offering-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.88) contrast(1.035);
+  transform: scale(1.015);
+  transition:
+    transform 1100ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 800ms ease;
+}
+
+.offering-card:hover .offering-image img,
+.offering-card:hover .offering-image video,
+.offering-card:hover .offering-photo {
+  transform: scale(1.075);
+  filter: saturate(1) contrast(1.04);
+}
+
+.card-number {
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  background: rgba(20, 16, 13, 0.24);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.card-arrow {
+  z-index: 2;
+  right: 17px;
+  bottom: 17px;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #33251e;
+  transition:
+    transform 350ms ease,
+    background 350ms ease,
+    color 350ms ease;
+}
+
+.offering-card:hover .card-arrow {
+  transform: rotate(45deg);
+  background: #33251e;
+  color: #fff;
+}
+
+.offering-info {
+  padding: 23px 2px 0;
+}
+
+.offering-info .eyebrow {
+  color: #9b6548;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.offering-info h3 {
+  margin-top: 12px;
+  transition: color 300ms ease;
+}
+
+.offering-card:hover .offering-info h3 {
+  color: #a85e35;
+}
+
+.offering-info p {
+  line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+  .offering-image {
+    aspect-ratio: 0.9;
+  }
+
+  .offering-info {
+    padding-top: 18px;
+  }
+
+  .card-number {
+    top: 13px;
+    left: 13px;
+  }
+
+  .card-arrow {
+    right: 13px;
+    bottom: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offering-image img,
+  .offering-image video,
+  .offering-photo,
+  .card-arrow {
+    transition: none;
+  }
+}
+
+/* Premium editorial labels and navigation details */
+.offering-image .card-number {
+  top: 22px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.8px;
+  line-height: 1;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  backdrop-filter: none;
+}
+
+.offering-image .card-number::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.offering-image .card-arrow {
+  right: 21px;
+  bottom: 21px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: rgba(25, 20, 17, 0.12);
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition:
+    background 400ms ease,
+    border-color 400ms ease,
+    transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.offering-image .card-arrow svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.35;
+  transition: transform 400ms ease;
+}
+
+.offering-card:hover .offering-image .card-arrow {
+  transform: translate(2px, -2px);
+  border-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.17);
+  color: #fff;
+}
+
+.offering-card:hover .offering-image .card-arrow svg {
+  transform: translate(1px, -1px);
+}
+
+@media (max-width: 600px) {
+  .offering-image .card-number {
+    top: 17px;
+    left: 16px;
+  }
+
+  .offering-image .card-arrow {
+    right: 15px;
+    bottom: 15px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+/* =========================================================
+   SHARED SITE POLISH — INTERNAL HEADER & FOOTER
+   ========================================================= */
+
+/* Internal-page header */
+.site-header-inner {
+  min-height: 88px;
+  padding: 16px clamp(5%, 7vw, 8%);
+  border-bottom: 1px solid rgba(62, 43, 32, 0.10);
+  box-shadow: 0 5px 22px rgba(40, 27, 19, 0.035);
+}
+
+.site-header-inner .main-nav {
+  align-items: center;
+  gap: clamp(18px, 2.2vw, 32px);
+}
+
+.site-header-inner .main-nav a:not(.nav-cta) {
+  position: relative;
+  padding: 8px 0;
+  transition: color 220ms ease;
+}
+
+.site-header-inner .main-nav a:not(.nav-cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: var(--caramel);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms ease;
+}
+
+.site-header-inner .main-nav a:not(.nav-cta):hover::after {
+  transform: scaleX(1);
+}
+
+.site-header-inner .nav-cta {
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid var(--caramel);
+  border-radius: 3px;
+  box-shadow: none;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.site-header-inner .nav-cta:hover {
+  border-color: var(--espresso);
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+/* Shared footer */
+.site-footer {
+  position: relative;
+  padding: 76px 7% 24px;
+}
+
+.footer-main {
+  column-gap: clamp(28px, 4.5vw, 64px);
+  row-gap: 42px;
+  padding-bottom: 56px;
+}
+
+.footer-brand-column {
+  max-width: 330px;
+}
+
+.site-footer .footer-message {
+  max-width: 290px;
+  margin-top: 28px;
+  font-size: clamp(19px, 1.7vw, 23px);
+  line-height: 1.55;
+}
+
+.footer-contact-note {
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.footer-column {
+  gap: 16px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.footer-column a {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.footer-column a:hover {
+  transform: translateX(3px);
+}
+
+.site-footer .footer-bottom {
+  align-items: center;
+  padding-top: 24px;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+}
+
+.site-footer .footer-bottom a {
+  transition: color 200ms ease;
+}
+
+@media (max-width: 900px) {
+  .site-header-inner {
+    min-height: 78px;
+  }
+
+  .footer-main {
+    column-gap: 36px;
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header-inner {
+    min-height: 72px;
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .site-footer {
+    padding: 54px 6% 22px;
+  }
+
+  .footer-main {
+    gap: 34px;
+    padding-bottom: 38px;
+  }
+
+  .site-footer .footer-message {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  .site-footer .footer-bottom {
+    gap: 12px;
+    padding-top: 20px;
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header-inner .main-nav a,
+  .site-header-inner .nav-cta,
+  .footer-column a,
+  .site-footer .footer-bottom a {
     transition: none;
   }
 }
